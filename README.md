@@ -1,4 +1,4 @@
-# Bar or Column Chart with One or More Data Series in Chartjs
+# Bar or Column Chart with One or More Data Series in Chart.js
 
 ![Bar chart with any number of series](./bar.png)
 
