@@ -28,7 +28,9 @@ $(document).ready(function() {
   var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
 
   // Read data file and create a chart
-  d3.csv('data.csv').then(function(rows) {
+  $.get('./data.csv', function(csvString) {
+
+    var rows = Papa.parse(csvString, {header: true}).data;
 
     var datasets = SERIES.map(function(el) {
       return {
