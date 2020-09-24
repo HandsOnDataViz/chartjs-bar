@@ -1,14 +1,18 @@
 $(document).ready(function() {
 
-  var HORIZONTAL = false;   // `false` for vertical column chart, `true` for horizontal bar chart
-	
-  var STACKED = false;  // `false` for individual bars, `true` for stacked bars
+  var TITLE = 'English Learners by Select School Districts in CT, 2018-19';
 
-  var TITLE = 'English Learners by Select School Districts in Connecticut, 2018-19';
+  // `false` for vertical column chart, `true` for horizontal bar chart
+  var HORIZONTAL = false;
 
-  var LABELS = 'district';  // Column to define 'bucket' names on x-axis (for vertical column chart) or y-axis (for horizontal bar chart)
+	// `false` for individual bars, `true` for stacked bars
+  var STACKED = false;  
+  
+  // Which column defines 'bucket' names?
+  var LABELS = 'district';  
 
-  var SERIES = [  // For each column representing a data series, define its name and color
+  // For each column representing a data series, define its name and color
+  var SERIES = [  
     {
       column: 'nonlearner',
       name: 'Non-Learners',
@@ -21,11 +25,17 @@ $(document).ready(function() {
     }
   ];
 
-  var X_AXIS = 'School Districts';  // x-axis label and label in tooltip
-  var Y_AXIS = 'Number of Enrolled Students'; // y-axis label and label in tooltip
+  // x-axis label and label in tooltip
+  var X_AXIS = 'School Districts';
 
-  var SHOW_GRID = true; // `true` to show the grid, `false` to hide
-  var SHOW_LEGEND = true; // `true` to show the legend, `false` to hide
+  // y-axis label, label in tooltip
+  var Y_AXIS = 'Number of Enrolled Students';
+
+  // `true` to show the grid, `false` to hide
+  var SHOW_GRID = true; 
+
+  // `true` to show the legend, `false` to hide
+  var SHOW_LEGEND = true; 
 
   // Read data file and create a chart
   $.get('./data.csv', function(csvString) {
